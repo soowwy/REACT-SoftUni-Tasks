@@ -1,0 +1,41 @@
+#root {
+  text-align: center
+}
+
+.App {
+  
+}
+
+.warper{
+  display: inline-block;
+  position: relative;
+  }
+  .warper .sliderImg{
+  max-height: 200px;
+  }
+  .warper .slider-button{
+  position: absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width: 50px;
+  height: 50px;
+  }
+  
+  .warper .case-left {
+  left: 0;
+  }
+
+  
+  .warper .case-right {
+  right: 0
+  }
+
+  .par-char {
+    display: inline-block
+  }
+  .char-img {
+    max-height: 200px;
+    display: inline-block;
+    border: 2px solid orange;
+    float: left;
+  }
