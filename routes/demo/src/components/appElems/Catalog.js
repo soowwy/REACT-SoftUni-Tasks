@@ -23,6 +23,7 @@ class Catalog extends Component {
     render() {
         return (
             <section id="viewCatalog">
+             
             <div class="posts">
                 {this.state.posts.map(post=>{
                     return <Post key={post._id} props={post}/>

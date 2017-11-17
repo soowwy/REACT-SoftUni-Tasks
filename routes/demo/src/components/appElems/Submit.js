@@ -7,31 +7,33 @@ class Submit extends Component {
     constructor() {
         super()
 
-
         this.dataCollector = (e) => {
             this.setState(dataCollector(e))
         }
 
 
         this.createPost = (e)=>{
-            e.preventDefault(e)
+            e.preventDefault()
             reqHandler.createPost(this.state).then(data=>{
                 console.log(data)
             })
         }
+
     }
 
     componentDidMount() {
         this.setState({author: localStorage.getItem('username')})
+        console.log(this.state)
     }
 
 
     render () {
         return (
             <div class="submitArea formContainer">
-            {console.log(this.state)}
+            
             <form id="editPostForm" class="submitForm" onSubmit={(e)=>{this.createPost(e)}}>
                 <label>Link URL:</label>
+               
                 <input 
                        onChange={(e) => {this.dataCollector(e)}}
                        name="url" 
@@ -53,10 +55,10 @@ class Submit extends Component {
                 <textarea 
                        onChange={(e) => {this.dataCollector(e)}}
                        name="description"></textarea>
-                <Link to='/'> <input 
+                 <input 
                        id="btnEditPost" 
                        type="submit" 
-                       value="Edit Post"/></Link>
+                       value="Edit Post"/>
             </form>
             </div>
         )

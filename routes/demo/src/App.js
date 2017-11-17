@@ -12,14 +12,17 @@ class App extends Component {
     constructor() {
       super()
     this.state = {
-      token: ''
+      token: '',
+      author: ''
     }
   }
 
   componentDidMount() {
     if(localStorage.getItem('token')) {
       this.setState({token:localStorage.getItem('token')})
+
     }
+    this.setState({username: localStorage.getItem('author')})
   }
 
 
@@ -27,8 +30,8 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-        {console.log(this.state)}
-          <Header/>
+       
+          <Header />
 
           { this.state.token == '' ? <GuestHome/> : <Wrapper/>}
           

@@ -38,13 +38,13 @@ let reqHandler = {
                 Authorization: 'Kinvey ' +  localStorage.getItem('token')
             }
         }).then(res => {
-            console.log(res)
             return res.json()
+            console.log('test')
         })
     },
 
-    createPost: payload=> {
-        return fetch(`${hostUrl}/appdata/${appKey}/posts`, {
+    createPost: (payload) => {
+        return fetch('https://baas.kinvey.com/appdata/kid_SyRGSuEyz/posts', {
             method: 'POST',
             headers: {
                 Authorization: 'Kinvey ' +  localStorage.getItem('token'),
@@ -52,8 +52,8 @@ let reqHandler = {
             },
             body: JSON.stringify(payload)
         }).then(res=>{
-            return res.json()
-        })
+            console.log(res)
+        })       
     }
 } 
 
